@@ -1,11 +1,8 @@
 <?php
 include_once "BEvalidalogim.php";
-//system("TZ=BRT date");
-//date_default_timezone_set('America/Sao_Paulo');
-//ini_set('date.timezone', 'America/Sao_Paulo');
+
 $tipoplano    = $_SESSION['tipoplano'];
 $duracao      = $_SESSION['duracao']; // vem da tabela plano 
-//$data_venc    = 
 $valor        = $_SESSION['valor'];
 $email        = $_SESSION['semail'];
 $senha        = $_SESSION['ssenha'];
@@ -16,7 +13,6 @@ $cnpj         = '';
 $msg          = 0;
 @$msg         = $_REQUEST['msg'];
 
-echo('senha cadastro :'.$senha);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,28 +56,7 @@ echo('senha cadastro :'.$senha);
         <div id="inputNome">
           <input type="text" id="nome_contato" class="inpute" name="nome_contato" placeholder="Nome contato">
         </div>
-        <label>Fone:</label>
-        <div id="inputFone">
-          <input type="text" id="fone" class="inpute" name="fone" placeholder="fone">
-          <input type="text" id="fone2" class="inpute" name="fone2" placeholder="fone 2">
-        </div>
-        <label>Email:</label>
-        <div id="inputEmail">
-          <input type="text" id="email" class="inpute" name="email" placeholder="Email" value="<?php echo $email; ?>">
-        </div>
-        <label>Tipo de Plano</label>
-        <label>Valor</label>
-        <div id="inputplano">
-          <input type="text" id="tipo_plano" class="inpute" name="tipo_plano" readonly=true placeholder="tipo_plano" value="<?php echo $tipoplano; ?>">
-          <!-- </div> -->
-          <div>
-            <input type="text" id="valor" class="inpute" name="valor" readonly=true placeholder="valor " value="<?php echo $valor; ?>">
-          </div>
-        </div>
-        <label>vencimento</label>
-        <div>
-          <input type="text" id="duracao" class="inpute" name="duracao" readonly=true placeholder="liberado apos o pagto" value="<?php echo $duracao; ?>">
-        </div>
+       
         <button type="submit" name="enviar">Enviar</button>
       </div>
     </form>
