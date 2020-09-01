@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+body{
+  margin: 0;  
+  padding: 0;
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 12px;
+}
+h3{
+  margin: 0;
+}
+
+
+#cabecalho{
+  font-size: 20px;
+  text-align: center;
+  width: 98%;
+  height: 35px;
+  background:   #ADD8E6;
+  margin-left: 1%;
+   
+}
+
+
+#rodape{
+  width: 98%;
+  height: 40px;
+  background: #ADD8E6;
+  margin-top: 555px;
+  margin-left: 1%;
+
+}
+#copy{
+  width: 50%;
+  height: 51px;
+  float: left;
+
+}
+
+#credito{
+  width: 50%;
+  height: 40px;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+      
+}
+
+.clearfix{
+    clear: both;
+}
+
+.legenda{
+  margin: 0;
+
+}
+
+.form-group{
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  margin: 0px;
+
+}
+
+.form-control.form-control-sm{
+  height: 20px; 
+  margin-right: 0;
+  width: 95%;
+
+}
+
+#dadospe{
+  margin: 0px 10px 5px;
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+
+}
+
+#ncm {
+  padding-left: 15px;
+}
+
+#botoes-cfop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+}
+
+#titulocfop{
+  display: flex;
+  justify-content: center;
+  background: rgb(196, 231, 243);
+  margin-bottom: 10px;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 30px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#tabelacfop{
+ display: none;
+
+}
+
+ #myUL li a{
+  background-color: #D8BFD8;
+ 
+ }
+
+ #myCheck{
+  min-width: 20px;
+  min-height: 20px;
+  border: 2px;
+  margin: 0;
+
+ }
+
+ #btn_repasse{
+  display: flex;
+  align-items: center;
+  width: 170px;
+  height: 38px;
+  border-radius: 5px;
+  justify-content: space-around;
+  background: #A7A4A4;
+  margin-right: 35px;
+
+}
+
+#btn_repasse > label{
+  margin: 0 5px; 
+}
+
+#btn-voltar{
+  height: 32px;
+  border-radius: 5px;
+  margin-left: 10px;
+
+}
+#inputdepesquisa{
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  
+}
+/*
+.container {
+ position: relative;
+}*/
+#image {
+  position: absolute;
+  
+}
+
+#csosnDentro{
+  position: absolute;
+  font-size: 11px;
+  left: 271px;
+  top: 367px;
+  width: 33px;
+  border: 2px solid #ED3838;
+  
+}
+
+#csosnFora{
+  position: absolute;
+  font-size: 11px;
+  left: 271px;
+  top: 393px;
+  width: 33px;
+  border: 2px solid #ED3838;
+}
+
+#cfopDento{
+  position: absolute;
+  font-size: 12px;
+  left: 406px;
+  top: 434px;
+  width: 57px;
+  border: 2px solid #ED3838;
+}
+
+#cfopFora{
+  position: absolute;
+  font-size: 12px;
+  left: 406px;
+  top: 454px;
+  width: 57px;
+  border: 2px solid #ED3838;
+}
+
+#Pis{
+  position: absolute;
+  font-size: 12px;
+  left: 404px;
+  top: 300px;
+  width: 37px;
+  border: 2px solid #ED3838;
+}
+
+#Cofins{
+  position: absolute;
+  font-size: 12px;
+  left: 404px;
+  top: 366px;
+  width: 37px;
+  border: 2px solid #ED3838;
+}
+
+#cfopnfe{
+  width: 24%;
+  border-radius: 5px;
+}
+
+#ncm{
+  position: absolute;
+  font-size: 10px;
+  left: 105px;
+  top: 324px;
+  width: 70px;
+  border: 2px solid #ED3838;
+}
+
+#unidadeMed{
+  position: absolute;
+  font-size: 10px;
+  left: 105px;
+  top: 205px;
+  width: 55px;
+  border: 2px solid #ED3838;
+
+}
+
+.flex-input{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  margin: 5px 10px 5px 15px;  
+  max-width: 729px;
+
+}
+
+.btn{
+  margin-left:15px;
+}
+/*---------------------FRcompraPlanos -----------*/
+#divisao{
+  display: flex;
+
+}

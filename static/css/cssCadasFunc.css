@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+header{  /* cabecalho das paginas */
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px;
+    align-items: center;
+    background-color: #1abc9c;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 2px;
+    height: 43px;
+
+}
+
+.fa-times{
+
+    color: #ED3838;
+    text-shadow: 1px 1px black;
+
+
+}
+#saida{
+
+    color: #000;
+    margin-right: 10px;
+
+}
+
+.janela1{
+    background-color: aqua;
+    width: 600px;
+    height: 600px;
+    float: left;  
+    padding: 20px;
+}
+.janela2{
+    background-color: cadetblue;
+    height: 600px;
+    padding: 20px;
+    margin-left: 610px;
+        
+    
+}
+#editar{
+ margin-top: 20px;
+    
+}
+

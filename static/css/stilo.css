@@ -1,0 +1,1077 @@
+@charset "utf-8";
+
+
+body,ul,li,p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1,2rem;
+    font-family: arial;
+}
+
+
+header{  /* cabecalho das paginas */
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px;
+    align-items: center;
+    background-color: #1abc9c;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 2px;
+    height: 43px;
+
+}
+
+.fa-times{
+
+    color: #ED3838;
+    text-shadow: 1px 1px black;
+
+
+}
+#saida{
+
+    color: #000;
+    margin-right: 10px;
+
+}
+
+.botoes{ /* FRconversoes */
+    display: flex;
+    width:620px;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    margin: 0 200px 0 250px;
+
+}
+#blocoBotoes{
+    display: flex;
+    width: 70%;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#cfopdigitado{
+    width: 120px;
+    height: 30px;
+    /* min-width: 150px; */
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+
+
+}
+
+#btn-converte{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+    font-size: 12px;
+
+}
+#btn-pesquisa-cfop{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+}
+
+#btn-repasse{
+
+    display: flex;
+    align-items: center;
+
+    width: 159px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+    font-size: 12px;
+
+} 
+
+
+#btn_repasse > label{
+    margin: 0 5px; 
+}
+
+#btn-busca{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+    font-size: 12px;
+}
+#btn-aceitar{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+}
+
+#btn-fechar{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ED3838; 
+}
+
+#btn-voltar{
+    width: 60px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#btn-fecharSistema{
+    width: 90px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: antiquewhite;
+
+}
+
+
+#rodap{
+
+    display: flex; 
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 300;
+    bottom: 0;
+}
+
+
+#copy{
+    width: 95%;
+    background-color: #1abc9c;
+    text-align: center;
+    margin: 10px auto;
+    color: white;
+    font-size: 14px;
+
+
+}
+
+
+.container{
+    display: block;
+
+
+}
+.containerCv{ /* FRconversao */
+    display: block;
+    width: 95%;
+
+}
+
+.c-img{
+    position: relative;
+    max-width: 720px;
+    margin-left: 19%; 
+    z-index: 1;
+
+}
+
+.c-img img{
+    opacity: 98%;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.c-img .inputs1{
+    display: grid;
+    position: absolute;
+    grid-template-columns: 1fr 1fr;
+    width: 729px;
+    height: 260px;
+    top: 0px;
+    z-index: 3;
+}   
+
+.grid1-item1{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#unidadeMed{
+    position: absolute;
+    left: 88px;
+    bottom: 32px;
+    width: 60px;
+    height: 20px;
+
+}
+
+
+.c-img .inputs2{
+    display: grid;
+    position: absolute;
+
+    grid-template-columns: 190px 140px 130px ;
+    width: 729px;
+    min-height: 255px;
+
+    top: 270px;
+    z-index: 3;
+} 
+.grid2-item1{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%; 
+}
+
+#ncm{
+    position: absolute;
+    top: 50px;
+    left: 91px;
+    width: 68px;
+    height: 22px;
+
+}
+
+.grid2-item2{
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+}
+#csosnDentro{
+    position: absolute;
+    top: 96px;
+    left: 66px;
+    width: 33px;
+    height: 20px;
+}
+
+#csosnFora{
+    position: absolute;
+    top: 122px;
+    left: 66px;
+    width: 33px;
+    height: 20px;
+
+}
+#cfopDento{
+    position: absolute;
+    top: 164px;
+    left: 390px;
+    width: 57px;
+    height: 20px;
+}
+#cfopFora{
+    position: absolute;
+    top: 188px;
+    left: 390px;
+    width: 57px;
+    height: 20px;
+}
+
+#Pis{
+    position: absolute;
+    top: 32px;
+    left: 389px;
+    width: 36px;
+    height: 20px;
+}
+
+#Cofins{
+    position: absolute;
+    top: 98px;
+    left: 389px;
+    width: 36px;
+    height: 20px;
+}
+
+#unidadeMed, #csosnFora, #csosnDentro, #cfopDento ,#cfopFora, #ncm, #Pis ,#Cofins{
+    border: 2px solid #ED3838;
+
+}
+
+/*-------------------------*/
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 30px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+#tabelacfop{
+    display: none;
+
+}
+
+#myUL li a{
+    background-color: #D8BFD8;
+
+}
+/*
+   #menu{
+       display: flex;
+       width: 100%;
+       height: 60px;
+       border: 1px solid darkred;
+   }
+/*---------------------------------*/
+/*
+#nav {
+    text-align: center;
+  } */
+
+#nav ul {
+
+    /* list-style: none; */
+    display: flex;
+    width: 100%;
+    /*  vertical-align: top; */
+    /*  border: 1px solid #000; */
+    justify-content:space-between;
+    padding: 0;
+}
+
+#nav li {
+    float: left;
+    margin:0 85% 0 20px;
+
+}
+#nav li a{
+
+    font-size:18px;
+}
+
+/*---------------------*/
+
+#botoes-cfop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+}
+
+#titulocfop{
+    display: flex;
+    justify-content: center;
+    background: rgb(196, 231, 243);
+    margin-bottom: 10px;
+}
+#btn-voltar{
+    height: 32px;
+    border-radius: 5px;
+    margin-left: 10px;
+
+}
+.flex-input{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    margin: 5px 10px 5px 15px;  
+    max-width: 729px;
+
+}
+
+/*--------------------------------inicio logim ---------------*/
+/*  body {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+}*/
+
+#container {    /* div do FRLogin */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 370px;
+    height: 150px;
+    margin: auto;
+    box-shadow: 0px 0px 10px darkcyan;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+/*--------------------------------fim logim ---------------*/
+
+/*--------------------------inicio  FRcompraPlanos -----------------------------------*/
+#containerplano{
+    display: block;
+    margin-top: 5px;
+    margin-left: 100px;
+    width:1100px;
+    height: 710px;
+    padding: 0%;
+    border: 1px solid ;/* #ED3838;*/
+    align-items: center;
+
+
+}
+#caixacontrato{
+    display: block;
+    width: 950px ;
+    height: 380px;
+    /* border: 1px solid #ED3838;*/
+    margin: 30px;
+
+}
+#tituloContrato{
+    display: block;
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid #ED3838; */
+    text-align: center;
+
+}
+
+#contrato{
+    display: block;
+    border: 3px solid; 
+    float: left;
+    text-align: center;
+    background-color: rgb(208, 238, 228);
+    margin-left: 35px;
+    width: 910px;
+    height: 300px;
+    overflow: scroll;
+}
+
+#esquerda,#centro,#direita{
+    margin:10px 0px 20px 30px;
+    background-color: rgb(208, 238, 228);
+
+}
+#esquerda{
+    display: flex;
+    width: 280px;
+    height: 200px;
+    border: 0.1px solid; 
+    float: left;
+
+
+}
+
+#centro{
+    display: flex;
+    width: 280px;
+    height: 200px;
+    border: 0.1px solid ;/* rgb(8, 8, 8); */
+    float: left;
+
+
+}
+#direita{
+    display: flex;
+    width: 280px;
+    height: 200px;
+    border: 0.1px solid; /* rgb(8, 8, 8); */
+    float: left;
+
+}
+.textoplano{
+    display: block;
+    width: 275px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+#plano1,#plano2,#plano3{
+    width: 278px;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+    text-align: center;
+
+}
+#liberarBotoes{ /*FRcompraPlanos */
+    display: block;
+    height: 30px;
+    margin-left: 33px;
+}
+
+#myCheckAceito{
+    /* display: flex;  */
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 7px; 
+}
+#liberaBotoes .input{
+
+    padding: 0;
+    min-width: 5px;
+    min-height: 5px;
+    border-radius: 7px
+}
+#myCheck{
+    min-width: 35px;
+    min-height: 15px;
+    /* border: 2px; */
+    margin: 6px;
+
+}
+#boxPlanos{/*FRcompraPlanos */
+    display: block;
+    margin-top: 20px;
+    width: 1000px;
+    height: 250px;
+    /*  border: 1px solid #ED3838; */
+    margin-left: 30px;
+}
+.ativarHR{
+
+    color: black;
+    margin-bottom: 20px;
+} 
+#btncheck{ /* FRcompraPlanos.php */
+    display: block;
+
+}
+
+#pla, #plac, #plad{
+    display: none;
+}
+
+/*-------------------------fim compraPlanos --------------------------------------------------*/
+/* scroll */
+
+.row {
+    clear: both;
+}
+
+.column-3 {    
+    width: 25%;    
+}
+
+.column-9 {    
+    width: 75%;    
+}
+
+.label {
+    padding-top: 7px;
+    text-align: right;    
+}
+
+.label:after {
+    content: ':';
+    padding-right: 5px;
+}
+
+.column {
+    float: left;
+    height: 41px;    
+}
+
+.input input {
+    width: 100%;
+    height: 34px;    
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+/*
+.a[disabled="disabled"] {
+    pointer-events: none;
+}
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }  
+*/
+
+#btncontainer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 365px;
+    height: 150px;
+    margin: auto;
+    box-shadow: 0px 0px 10px darkcyan;
+    padding: 20px;
+    box-sizing: border-box; 
+
+}
+#btncontainerc{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 535px;
+    height: 150px;
+    margin: auto;
+    box-shadow: 0px 0px 10px darkcyan;
+    padding: 20px;
+    box-sizing: border-box; 
+
+}
+
+#btnsn{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#aliberar{ /* FRvalidalogin */
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 365px;
+    height: 150px;
+    margin: auto;
+    box-shadow: 0px 0px 10px darkcyan;
+    padding: 20px;
+    box-sizing: border-box; 
+
+}
+#BtnSairAliberar{ 
+
+    margin: 30px 120px;
+
+}
+
+
+
+/* -------------------- FRNovaCompraCadastro -------------------------*/
+
+#btnEnviar{
+    margin-left: 15px;
+
+}
+
+
+#telaesquerda{ /* tela FRNovaCompraCadastro1 */
+    display: block;
+    width: 500px;
+    height: 600px;
+    margin: 10px;
+
+    border: 1px solid brown; 
+
+}
+
+#teladireita{ /* tela FRNovaCompraCadastro1 */
+    display: block;
+    width: 550px;
+    height: 600px;
+    background-color: rgb(211, 239, 240);
+
+
+    border: 1px solid brown; 
+
+}
+#containergeral{ /* tela FRNovaCompraCadastro1 */
+    display: flex;
+    margin-top: 30px;
+    margin-left: 5px;
+
+    width:1100px;
+    height: 650px;
+    padding: 0%;
+    border: 1px solid #ED3838;
+    /*  align-items: center; */
+
+}
+
+#inputeNCC{
+    width: 120px;
+    height: 30px;
+
+}
+
+#teladireita, #telaesquerda{
+    margin: 35px;
+
+}
+#inputesesquera{
+    margin-left: 40px;
+
+}
+
+#inputesdireita{
+    margin-left: 5px;
+
+}
+#antiga,#novos{
+
+    text-align: center;
+}
+
+
+/*-----------------------------fim tela FRNovaCompraCadastro1 ------------------------*/
+#containerLibera{ /* FRliberarAcesso */
+
+    display: flex;
+    width: 800px;
+    height: 550px;
+    padding: 0%;
+    /*   border: 1px solid #ED3838; */
+
+
+}
+.inpute{ /*FRliberaAcesso */
+    display: flex;
+    height: 25px;
+    width: 250px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding: 0;
+    /* border: 1px solid #ED3838;*/
+
+
+}
+#labellibera{ /*FRliberaAcesso */
+    padding: 0%;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+#inputCodigo{/*FRliberaAcesso */
+    display: block;
+    width: 270px;
+    height: 549px;
+    padding: 0%;
+    /*border: 1px solid blue;*/
+
+}
+#btnliberar{ /*FRliberaAcesso */
+    margin-left: 15px;
+
+}
+
+/*-------------------------FRcadastro --------------------------------*/
+#inputCadastro{ /*FRcadastro */
+    display: block;
+    width: 800px;
+    height: 530px;
+}
+
+#inputCodigoCadastro,#inputEmpresa,#inputFone,#inputplano{/*FRcadastro */
+    display: flex;
+
+}
+
+
+/*-------------------------fim FRcadastro --------------------------------*/
+
+
+/* -------------------------- FReditarCadastro ----------------------- */
+#inputsEditarCadastro{
+    display: block;
+    width: 800px;
+    height: 600px;
+    margin-left: 15px;
+}
+#inputCodigoEC{
+    display: flex;
+}
+#inputTipoplano{
+    display: flex;
+
+}
+.inputeEC{ 
+    display: flex;
+    height: 25px;
+    width: 250px;
+    margin: 0 10px 15px 0;
+    padding: 0;
+    /* border: 1px solid #ED3838;*/
+
+
+}
+#fone{
+    display: flex;
+}
+
+/* -------------------------- Fim FReditarCadastro ----------------------- */
+
+
+/*-------------------------menu administrativo ------------------------*/
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 150px;
+}
+
+ul li {
+    position: relative;
+}
+
+
+li ul {
+    position: absolute;
+    left: 149px;
+    top: 0;
+    display: none;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    color: darkturquoise(9, 241, 125);
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #ccc; 
+}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+
+
+li:hover ul {
+    display: block;
+}
+
+ul li a:hover{
+    text-decoration:underline;
+    font-weight: bold;
+    background: #ccc; 
+}
+
+
+
+
+/* ---------------------------fim menu administrativo ------------------->
+
+/*---------------------------editar planos -----------------------------*/
+#containerEP{
+    display: block;
+
+
+}
+.inputeEP{
+    padding: 0;
+    margin-bottom: 15px;
+
+}
+
+#inputCodigoEP{
+    display: block;
+    width: 795px;
+    height: 300px;
+
+}
+.inp{
+    margin-bottom: 0;
+    padding: 0;
+}
+/*------------------------fim editar planos -----------------------------*/
+
+
+.item {
+    display: flex;
+    margin: 5px;
+    background:rgb(151, 245, 245);
+    text-align: center;
+    font-size: 1em;
+    width: 150px;
+    height: 20px;
+}
+
+.grid {
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.15em;
+    font-weight: normal;
+}
+
+body {
+    font-family: monospace;
+    color: #333;
+    padding-bottom: 60px;
+    margin: 0px;
+}
+
+body > div {
+    padding: 20px 0;
+}
+
+body > div:nth-of-type(even) {
+    background: rgba(0,0,0,.03);
+}
+
+body > div > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.inputeAliberar{
+    width: 150px;
+    height: 25px;
+
+}
+
+
+
+#video{ /* index.php */
+    width: 625px;
+    height: 544px;
+    margin: 0 auto;
+    display: block;
+
+}
+
+/*---------------teste -------------------------- */
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 30px;
+}
+
+/* 1 
+
+.grid-row-1 .item-1 {
+        grid-row: 3;
+}
+
+.grid-row-1 .item-3 {
+        grid-row: 1;
+}
+
+/* 2 
+
+.grid-row-2 .item-1 {
+        grid-row: 1 / 4;
+}
+
+.grid-row-2 .item-5 {
+        grid-row: span 3;
+}
+
+.grid-row-2 .item-6 {
+        grid-row: span 2;
+}
+
+/* 3 
+
+.grid-row-3 .item-2 {
+        grid-row: 1 / 3;
+}
+
+.grid-row-3 .item-4 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+}
+
+.grid-row-3 .item-1 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+}
+
+/* 4 
+
+.grid-row-4 {
+        grid-template-rows: [row1] 1fr [row2] 1fr [row3] 1fr;
+}
+
+.grid-row-4 .item-2 {
+        grid-row: row1 / row3;
+}
+
+.grid-row-4 .item-4 {
+        grid-row: row1 / 4;
+}
+
+/* 5 
+
+.grid-row-5 {
+        grid-template-areas:
+                "header header header"
+                "sidenav content ads"
+                "sidenav footer footer"
+        ;
+}
+
+.grid-row-5 .item-1 {
+        grid-column: span 3;
+        grid-row-start: header;
+        grid-row-end: header;
+}
+
+.grid-row-5 .item-2 {
+        grid-column: 1;
+        grid-row-start: sidenav;
+        grid-row-end: sidenav;
+}
+
+.grid-row-5 .item-3 {
+        grid-row: content / content;
+}
+
+.grid-row-5 .item-4 {
+        grid-row-start: ads;
+}
+
+.grid-row-5 .item-5 {
+        grid-row: footer;
+        grid-column: span 2;
+}
+
+/* Grid Item */
+
+/*------------fim teste -------------------------*/
+
+
+
+
+
+
+
+

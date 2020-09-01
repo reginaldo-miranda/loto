@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+body{
+    margin: 0;  
+    padding: 0;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    /* color: black; */
+   
+}
+
+#principal{
+    width: 1200px;
+    height: auto;
+    background: #dddddd;
+    margin: 0 auto;
+}
+
+
+
+#topo{
+    width: 130%;
+    height: 60px;
+    background: #40347A;
+
+}
+
+#logotipo{
+    width: 120px;
+    height: 60px;
+    margin: 0;
+    padding: 0; 
+    float: left;
+
+}
+
+#cabecalho{
+    
+    font-size: 40px;
+    text-align: center;
+    width: 980px;
+    height: 60px;
+    background: green;
+    float: left; 
+}
+
+
+#menuprincipal{
+
+    display: block;
+    width: 150px;
+    height: 500px;
+
+   background: #EDF013;
+
+}
+
+#rodape{
+    width: 100%;
+    height: 45px;
+    background: #16A4F6;
+    margin-top: 8px;
+
+}
+#copy{
+    width: 50%;
+    height: 50px;
+    float: left;
+    
+    
+}
+#credito{
+    width: 50%;
+    height: 50px;
+    float: left;
+        
+}
+.clearfix{
+    clear: both;
+}
+
+
+
+.legenda{
+
+margin: 0;
+
+}
+
+
+.form-control.form-control-sm{
+
+height: 25px; 
+margin-right: 0;
+
+}
+#uf{
+
+margin: 0;
+width: 80px;
+padding: 0;
+
+}
+#juntos{
+
+display: block;
+width: 100px;
+margin: 0;
+float: left;
+
+}
+
+
+#pessoafj{
+
+margin-top: 0px;
+display: block;
+width: 250px;
+float: left;
+
+}
+
+#logra{
+margin: 0 0 8px;
+width: 400px;
+height: 40px;
+font-size: 30px;
+
+}
+
+#dadospe{
+margin: 0px 0px 10px;
+width: 220px;
+height: 40px;
+font-size: 30px;
+
+}
+
+#at{
+display: block;
+margin: 10px 20px 10px;
+width: 120px;
+font-size: 15px;
+float: left;
+}
+
+
+.ati{
+margin: 10px;
+font-size: 17px;
+
+}
+
+
+/*-------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+
+
+
+
+
+
