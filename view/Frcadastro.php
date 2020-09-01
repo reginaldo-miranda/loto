@@ -90,7 +90,7 @@ echo('senha cadastro :'.$senha);
   <?php include_once "BEfooter.php" ?>
   <!----------------------------------fim rodape------------------------------------------>
   <script>
-    var retornocfop = localStorage.getItem('cfopenco');
+    var retornocfop = localStorage.getItem('');
     /*	document.getElementById('cfopnfe').value=retornocfop; */
     localStorage.clear();
   </script>
