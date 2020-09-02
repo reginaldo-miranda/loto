@@ -1,17 +1,8 @@
 <?php
-include_once "BEvalidalogim.php";
+//include_once "BEvalidalogim.php";
 
-$tipoplano    = $_SESSION['tipoplano'];
-$duracao      = $_SESSION['duracao']; // vem da tabela plano 
-$valor        = $_SESSION['valor'];
-$email        = $_SESSION['semail'];
-$senha        = $_SESSION['ssenha'];
-$dataabertura = $_SESSION['dataabertura']; // antiga datainicio
-$verifica     = $_SESSION['existecadastro'];// $data_venc = $_SESSION['data_venc'];// $row_msg_cont['data_venc'];
-$empresa      = '';
-$cnpj         = '';
-$msg          = 0;
-@$msg         = $_REQUEST['msg'];
+
+//@$msg         = $_REQUEST['msg'];
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +24,7 @@ $msg          = 0;
   </div>
 </header>
 <body>
+    <!--
   <?php if ($msg == 'enviado') : ?>
         <h1> cadastrado com sucesso </h1>
       <?php else : ?>
@@ -42,12 +34,12 @@ $msg          = 0;
   <div class="conteiner">
     <form action="BEinserir_cadastro.php" method="POST">
       <div id="inputCadastro">
-        <label>Codigo</label>
+        <label>Numero do jogo</label>
         <div id="inputCodigoCadastro">
           <input type="text" class="inpute" name="codigo" placeholder="codigo">
-          <input type="text" id="data_abertura" class="inpute" name="data_abertura" placeholder="data" value="<?php echo $dataabertura; ?>">
+
         </div>
-        <label>Empresa:</label>
+        <label>dezenas</label>
         <div id="inputEmpresa">
           <input type="text" id="empresa" class="inpute" name="empresa" topo.phpname="empresa" placeholder="Empresa">
           <input type="text" id="cnpj" class="inpute" name="cnpj" placeholder="cnpj">
