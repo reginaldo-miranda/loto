@@ -1,8 +1,10 @@
 <?php
 require_once("../php/BEconexao_pdo.php");
 require_once("../php/BEgrud.php");
+
 if(isset($_POST["d1"])){
-  $cdigo = $_POST["codigo"];
+  $codigo = $_POST["codigo"];
+  $nomejogo = $_POST["nomejogo"];    
   $d1   = $_POST["d1"];
   $d2   = $_POST["d2"];
   $d3   = $_POST["d3"];
@@ -19,8 +21,8 @@ if(isset($_POST["d1"])){
   $d14  = $_POST["d14"];
   $d15  = $_POST["d15"];
     
- inserir(array('codigo','d1','d2','d3','d4','d5','d6','d7','d8','d9','d10','d11','d12','d13','d14','d15'),
-         array($codigo,$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15),"lotofacil");
+ inserir(array('nconcurso','nomejogo','d1','d2','d3','d4','d5','d6','d7','d8','d9','d10','d11','d12','d13','d14','d15'),
+         array($codigo,$nomejogo,$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15),"lotofacil");
     
   
 }
@@ -60,6 +62,7 @@ if(isset($_POST["d1"])){
         <label>Numero do jogo</label>
         <div>
           <input type="text" name="codigo" placeholder="codigo" size="10">
+          <input type="text" name="nomejogo" placeholder="nome do jogo">
 
         </div>
         <label>dezenas</label>
