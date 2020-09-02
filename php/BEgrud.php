@@ -1,6 +1,6 @@
 <?php
 //include_once("BEfecha_conexao.php");
-include_once("conexao.php");
+//require_once("conexao.php");
 //include_once("BEinseir_cadastro.php");
 
 function inserir($coluna, $valor, $tabela)
@@ -127,7 +127,8 @@ function deletar($tabela, $where=NULL){
         echo "Erro ao apgar o aquivo {$sql}";
         return false;
     }
-    /*
+    }
+ /*
 https://www.youtube.com/watch?v=zRjAqeBkWU8&list=PLIZ0d6lKIbVpOxc0x1c4HpEWyK0JMsL49&index=23 
 https://www.youtube.com/watch?v=KubuQ8nHWqU&list=PLIZ0d6lKIbVpOxc0x1c4HpEWyK0JMsL49&index=24
 
@@ -137,7 +138,7 @@ $id = $_REQUEST[$id];
 
 delete("nome da tabela", "WHERE id = $id");
 }
-
+ */
 
 
 

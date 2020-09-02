@@ -54,7 +54,7 @@ function getconexao(){
 }*/
 
 function getconexao(){
-    $dsn = 'mysql:host=localhost;dbname=vendas;charset=utf8';
+    $dsn = 'mysql:host=localhost;dbname=conversoa;charset=utf8';
     $username = 'root';
     $pass = '';
     try{
