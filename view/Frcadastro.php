@@ -83,7 +83,8 @@ if(isset($_POST["d1"])){
           <input type="text"  class="inpute" name="d14"  placeholder="14">
           <input type="text"  class="inpute" name="d15"  placeholder="15">
         </div><br>
-           <button type="submit">Enviar</button>
+          <!-- <button type="submit">Enviar</button> -->
+           <input type="submit" value="Frcadastro.php">
       </div>
 
     </form>
