@@ -3,15 +3,15 @@ require_once("../php/BEconexao_pdo.php");
 require_once("../php/BEgrud.php");
 if(isset($_POST["d1"])){
   $cdigo = $_POST["codigo"];
-  $d1  = $_POST["d1"];
-  $d2  = $_POST["d2"];
-  $d3  = $_POST["d3"];
-  $d4  = $_POST["d4"];
-  $d5  = $_POST["d5"];
-  $d6  = $_POST["d6"];
-  $d7  = $_POST["d7"];
-  $d8  = $_POST["d8"];
-  $d9  = $_POST["d9"];
+  $d1   = $_POST["d1"];
+  $d2   = $_POST["d2"];
+  $d3   = $_POST["d3"];
+  $d4   = $_POST["d4"];
+  $d5   = $_POST["d5"];
+  $d6   = $_POST["d6"];
+  $d7   = $_POST["d7"];
+  $d8   = $_POST["d8"];
+  $d9   = $_POST["d9"];
   $d10  = $_POST["d10"];
   $d11  = $_POST["d11"];
   $d12  = $_POST["d12"];
@@ -50,9 +50,9 @@ if(isset($_POST["d1"])){
     <!--
   <?php if ($msg == 'enviado') : ?>
         <h1> cadastrado com sucesso </h1>
-      <?php else : ?>
+  <?php else : ?>
         <h1>cadastrar</h1>
-      <?php endif; ?>
+  <?php endif; ?>
   <!----------------------------------inicio div conteiner------------------------------>
   <div class="conteiner">
     <form action="Frcadastro.php" method="POST">
@@ -79,8 +79,6 @@ if(isset($_POST["d1"])){
           <input type="text"  class="inpute" name="d13"  placeholder="13">
           <input type="text"  class="inpute" name="d14"  placeholder="14">
           <input type="text"  class="inpute" name="d15"  placeholder="15">
-
-
         </div><br>
            <button type="submit">Enviar</button>
       </div>
