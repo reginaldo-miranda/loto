@@ -84,9 +84,24 @@ if(isset($_POST["d1"])){
       </div>
 
     </form>
+    
 
   </div>
-  <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------>
+  <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
+  
+  <form action="login.php" method="post">
+    <input type="text" name="user">
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
+
+<br />
+
+<form action="register.php" method="post">
+    <input type="text" name="user">
+    <input type="password" name="password">
+    <input type="submit" value="Register">
+</form>
 
   <!----------------------------------fim rodape------------------------------------------>
   <script>
