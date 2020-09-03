@@ -85,10 +85,13 @@ if(isset($_POST["d1"])){
         </div><br>
           <!-- <button type="submit">Enviar</button> -->
            <input type="submit" value="Frcadastro.php">
+           
       </div>
 
     </form>
-
+    <form action="Frlistar.php" method="post">
+        <input type="submit" value="Frlistar.php">
+    </form>     
   </div>
   <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
   
