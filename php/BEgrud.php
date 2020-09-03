@@ -1,12 +1,11 @@
 <?php
-//include_once("BEfecha_conexao.php");
-//require_once("conexao.php");
-//include_once("BEinseir_cadastro.php");
+require_once("../php/BEconexao_pdo.php");
+
 
 function inserir($coluna, $valor, $tabela)
 {
     echo ('FUNCAO dentro PDO') . "<br>";
-    $conn = getConnection();
+    $conn = getconexao();
 
     if ((is_array($coluna)) and (is_array($valor))) {
         if (count($coluna) == count($valor)) {
