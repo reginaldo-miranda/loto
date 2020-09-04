@@ -4,7 +4,7 @@ require_once("../php/BEconexao_pdo.php");
 
 function inserir($coluna, $valor, $tabela)
 {
-    echo ('FUNCAO dentro PDO') . "<br>";
+   // echo ('FUNCAO dentro PDO') . "<br>";
     $conn = getconexao();
 
     if ((is_array($coluna)) and (is_array($valor))) {
@@ -14,7 +14,7 @@ function inserir($coluna, $valor, $tabela)
             $stmt = $conn->prepare($inserir);
 
             if ($stmt->execute()) {
-                echo ('salvo com sucesso') . "<br>";
+               // echo ('salvo com sucesso') . "<br>";
                 // header("location:FRcadastro.php?msg=enviado");
             } else {
                 echo "nao salvou";
