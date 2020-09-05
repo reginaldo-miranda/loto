@@ -4,7 +4,7 @@ require_once("../php/BEconexao_pdo.php");
 
 function inserir($coluna, $valor, $tabela)
 {
-   // echo ('FUNCAO dentro PDO') . "<br>";
+   //echo ('FUNCAO dentro PDO') . "<br>";
     $conn = getconexao();
 
     if ((is_array($coluna)) and (is_array($valor))) {

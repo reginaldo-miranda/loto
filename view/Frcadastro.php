@@ -1,19 +1,20 @@
 <?php
 require_once("../php/BEconexao_pdo.php");
 require_once("../php/BEgrud.php");
-header("Cache-Control: no-store, no-cache, must-revalidate");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
+//header("Cache-Control: no-store, no-cache, must-revalidate");
+//header("Cache-Control: post-check=0, pre-check=0", false);
+//header("Pragma: no-cache");
+
 if(isset($_POST["concurso"])){
    
   
-  $concurso = $_POST["concurso"];
+   $concurso = $_POST["concurso"];
      
-  $nomejogo = $_POST["nomejogo"];    
+   $nomejogo = $_POST["nomejogo"];    
   
   
-  $d1   = $_POST["d1"];
   $d2   = $_POST["d2"];
+  $d1   = $_POST["d1"];
   $d3   = $_POST["d3"];
   $d4   = $_POST["d4"];
   $d5   = $_POST["d5"];
@@ -40,7 +41,7 @@ inserir(array('concurso','nomejogo','d1','d2','d3','d4','d5','d6','d7','d8','d9'
 if ($concurso <> ''){
     $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
      for ($i=0; $i <= 14; $i++) {
-      //echo $dezenas[$i]."<br>";
+       echo $dezenas[$i];
        inserir(array('concurso','nomejogo','dezena'),array($concurso,$nomejogo,$dezenas[$i]),"lotofacil");
         
  
