@@ -1,37 +1,177 @@
 <?php
 require_once("../php/BEconexao_pdo.php");
 require_once("../php/BEgrud.php");
-//header("Cache-Control: no-store, no-cache, must-revalidate");
-//header("Cache-Control: post-check=0, pre-check=0", false);
-//header("Pragma: no-cache");
 
-$conn = getconexao();
-
-$sql= "SELECT * FROM lotofacil order by 'concurso'";
-
-$result = $conn->prepare($sql);
-$result->execute();
-
-while($row = $result->fetch(PDO::FETCH_ASSOC)){
-    echo $row['concurso'].'  ';
-    echo $row['dezena']."<br>";
-} 
-$array = array();
-$nof = mysql_num_fields($sql);
-while($linha = mysql_fetch_array($sql)){
-   for($i = 0; $i < $nof; $i++){
-       $nf = mysql_field_name($sql, $$i);
-       $array[][$nf] = $linha[$i];
-   }
-}
-print_r($array);
+if(isset($_POST["concurso"])){
+   
+  
+      $concurso = $_POST["concurso"];
+     
+      $nomejogo = $_POST["nomejogo"];    
+  
+      $d1   = $_POST["d1"];
+      $d2   = $_POST["d2"];
+      $d3   = $_POST["d3"];
+      $d4   = $_POST["d4"];
+      $d5   = $_POST["d5"];
+      $d6   = $_POST["d6"];
+      $d7   = $_POST["d7"];
+      $d8   = $_POST["d8"];
+      $d9   = $_POST["d9"];
+      $d10  = $_POST["d10"];
+      $d11  = $_POST["d11"];
+      $d12  = $_POST["d12"];
+      $d13  = $_POST["d13"];
+      $d14  = $_POST["d14"];
+      $d15  = $_POST["d15"];
     
+      $dezenas    = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+     $dezenasbco = array();
+
+      $conn = getconexao();
+
+      $sql= "SELECT * FROM lotofacil order by 'concurso'";
+
+        $result = $conn->prepare($sql);
+        $result->execute();
+
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            echo $row['concurso'].'  ';
+            echo $row['dezena']."<br>";
+            array_push($dezenasbco,'$row');
+     
+        } 
+    echo $concurso = $_POST["concurso"];
+ 
+    $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+     for ($i=0; $i <= 14; $i++) {
+       echo $dezenas[$i];
+     }
+}
+   print_r($dezenasbco);
+   var_dump($dezenasbco);
+/*
+$frutas = array('laranja', 'morango');
+
+ array_push($frutas, 'melancia', 'pera');
+
+ print_r($frutas); 
+
 
 //$lotofixa=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,233,24,25];
 
+// compra os dados iguais dos array
+$array1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+$array2 = [1,2,3,4,5,6,7,24,9,10,11,25,24,14,15,16,25,21,22,23];
+
+$result_array = array_intersect_assoc($array1, $array2);
+print_r($result_array);
 
 /*$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
 $array2 = array("a" => "green", "b" => "yellow", "blue", "red");
 $result_array = array_intersect_assoc($array1, $array2);
 print_r($result_array);*/
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <title>Loto facil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="../static/css/stilo.css" rel="stylesheet" type="text/css">
+  <script src="../static/js/forminput.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/f48343b6a3.js" crossorigin="anonymous"></script>
+</head>
+<header>
+  <div id="TEXTO">Jogo da Loto Facil</div>
+  <div id="saida">
+    <button id="btn-fecharSistema" type="button" onClick="fechar()">Sair <i class="fas fa-times"></i></button>
+  </div>
+</header>
+<body>
+    <!--
+  <?php if ($msg == 'enviado') : ?>
+        <h1> cadastrado com sucesso </h1>
+  <?php else : ?>
+        <h1>cadastrar</h1>
+  <?php endif; ?>
+  <!----------------------------------inicio div conteiner------------------------------>
+  <div class="conteiner">
+    <form action="Frlistar.php" method="POST">
+      <div id="inputCadastro">
+        <label>Numero do jogo</label>
+        <div>
+          <input type="text" name="concurso" placeholder="codigo" size="10">
+          <input type="text" name="nomejogo" placeholder="nome do jogo">
+
+        </div>
+        <label>dezenas</label>
+        <div>
+          <input type="text"  class="inpute" name="d1"  placeholder="1">
+          <input type="text"  class="inpute" name="d2"  placeholder="2">
+          <input type="text"  class="inpute" name="d3"  placeholder="3">
+          <input type="text"  class="inpute" name="d4"  placeholder="4">
+          <input type="text"  class="inpute" name="d5"  placeholder="5">
+          <input type="text"  class="inpute" name="d6"  placeholder="6">
+          <input type="text"  class="inpute" name="d7"  placeholder="7">
+          <input type="text"  class="inpute" name="d8"  placeholder="8">
+          <input type="text"  class="inpute" name="d9"  placeholder="9">
+          <input type="text"  class="inpute" name="d10"  placeholder="10">
+          <input type="text"  class="inpute" name="d11"  placeholder="11">
+          <input type="text"  class="inpute" name="d12"  placeholder="12">
+          <input type="text"  class="inpute" name="d13"  placeholder="13">
+          <input type="text"  class="inpute" name="d14"  placeholder="14">
+          <input type="text"  class="inpute" name="d15"  placeholder="15">
+        </div><br>
+          <!-- <button type="submit">Enviar</button> -->
+           <input type="submit" value="Frcadastro.php">
+           
+      </div>
+
+    </form>
+    <form action="Frlistar.php" method="post">
+        <input type="submit" value="Frlistar.php">
+    </form>     
+  </div>
+  <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
+  
+  <form action="login.php" method="post">
+    <input type="text" name="user">
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
+
+<br />
+
+<form action="register.php" method="post">
+    <input type="text" name="user">
+    <input type="password" name="password">
+    <input type="submit" value="Register">
+</form>
+
+
+  <!----------------------------------fim rodape------------------------------------------>
+  <script>
+    var retornocfop = localStorage.getItem('');
+    /*	document.getElementById('cfopnfe').value=retornocfop; */
+    localStorage.clear();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
