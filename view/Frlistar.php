@@ -25,8 +25,10 @@ if(isset($_POST["concurso"])){
       $d14  = $_POST["d14"];
       $d15  = $_POST["d15"];
     
-      $dezenas    = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-   //   $dezenasbco = array();
+     $dezenas=[$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+    
+}
+      $dezenasbco = array();
 
       $conn = getconexao();
 
@@ -38,19 +40,21 @@ if(isset($_POST["concurso"])){
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             echo $row['concurso'].'  ';
             echo $row['dezena']."<br>";
-          //  array_push($dezenasbco,'$row');
+            array_push($dezenasbco,$row);
      
         } 
-}
- //   echo $concurso = $_POST["concurso"];
+
+    echo $concurso = $_POST["concurso"];
  
-   /* $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+  //  $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
      for ($i=0; $i <= 14; $i++) {
-       echo $dezenas[$i];
+      // echo $dezenas[$i]."<br>";
      }
-}
-  // print_r($dezenasbco);
-//   var_dump($dezenas);
+
+
+ //print_r($dezenasbco);
+
+// var_dump($dezenasbco);
 
 
 
@@ -79,6 +83,7 @@ print_r($result_array);*/
 ?>
 
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
 
