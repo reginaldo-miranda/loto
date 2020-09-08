@@ -26,7 +26,7 @@ if(isset($_POST["concurso"])){
       $d15  = $_POST["d15"];
     
       $dezenas    = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-     $dezenasbco = array();
+   //   $dezenasbco = array();
 
       $conn = getconexao();
 
@@ -38,18 +38,23 @@ if(isset($_POST["concurso"])){
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             echo $row['concurso'].'  ';
             echo $row['dezena']."<br>";
-            array_push($dezenasbco,'$row');
+          //  array_push($dezenasbco,'$row');
      
         } 
-    echo $concurso = $_POST["concurso"];
+}
+ //   echo $concurso = $_POST["concurso"];
  
-    $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+   /* $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
      for ($i=0; $i <= 14; $i++) {
        echo $dezenas[$i];
      }
 }
-   print_r($dezenasbco);
-   var_dump($dezenasbco);
+  // print_r($dezenasbco);
+//   var_dump($dezenas);
+
+
+
+
 /*
 $frutas = array('laranja', 'morango');
 
@@ -128,7 +133,7 @@ print_r($result_array);*/
           <input type="text"  class="inpute" name="d15"  placeholder="15">
         </div><br>
           <!-- <button type="submit">Enviar</button> -->
-           <input type="submit" value="Frcadastro.php">
+         <!--   <input type="submit" value="Frcadastro.php"> -->
            
       </div>
 
