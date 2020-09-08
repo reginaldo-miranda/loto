@@ -5,29 +5,46 @@ require_once("../php/BEgrud.php");
 if(isset($_POST["concurso"])){
    
   
-      $concurso = $_POST["concurso"];
+  echo $concurso = $_POST["concurso"];
      
-      $nomejogo = $_POST["nomejogo"];    
+   $nomejogo = $_POST["nomejogo"];    
   
-      $d1   = $_POST["d1"];
-      $d2   = $_POST["d2"];
-      $d3   = $_POST["d3"];
-      $d4   = $_POST["d4"];
-      $d5   = $_POST["d5"];
-      $d6   = $_POST["d6"];
-      $d7   = $_POST["d7"];
-      $d8   = $_POST["d8"];
-      $d9   = $_POST["d9"];
-      $d10  = $_POST["d10"];
-      $d11  = $_POST["d11"];
-      $d12  = $_POST["d12"];
-      $d13  = $_POST["d13"];
-      $d14  = $_POST["d14"];
-      $d15  = $_POST["d15"];
-    
-     $dezenas=[$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-    
+  
+  $d2   = $_POST["d2"];
+  $d1   = $_POST["d1"];
+  $d3   = $_POST["d3"];
+  $d4   = $_POST["d4"];
+  $d5   = $_POST["d5"];
+  $d6   = $_POST["d6"];
+  $d7   = $_POST["d7"];
+  $d8   = $_POST["d8"];
+  $d9   = $_POST["d9"];
+  $d10  = $_POST["d10"];
+  $d11  = $_POST["d11"];
+  $d12  = $_POST["d12"];
+  $d13  = $_POST["d13"];
+  $d14  = $_POST["d14"];
+  $d15  = $_POST["d15"];
 }
+  if ($concurso <> ''){
+      $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+      for ($i=0; $i <= 14; $i++) {
+         echo $dezenas[$i];
+
+       }
+     }else{
+        echo "vazia";
+    }
+  
+
+ 
+  /*  $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+     for ($i=0; $i <= 14; $i++) {
+       echo $dezenas[$i]."<br>";
+     } */
+
+    
+
       $dezenasbco = array();
 
       $conn = getconexao();
@@ -43,13 +60,6 @@ if(isset($_POST["concurso"])){
             array_push($dezenasbco,$row);
      
         } 
-
-    echo $concurso = $_POST["concurso"];
- 
-  //  $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-     for ($i=0; $i <= 14; $i++) {
-      // echo $dezenas[$i]."<br>";
-     }
 
 
  //print_r($dezenasbco);
@@ -111,7 +121,7 @@ print_r($result_array);*/
   <?php endif; ?>
   <!----------------------------------inicio div conteiner------------------------------>
   <div class="conteiner">
-    <form action="Frlistar.php" method="POST">
+    <form action="Frlistar.php" method="post">
       <div id="inputCadastro">
         <label>Numero do jogo</label>
         <div>
@@ -138,15 +148,12 @@ print_r($result_array);*/
           <input type="text"  class="inpute" name="d15"  placeholder="15">
         </div><br>
           <!-- <button type="submit">Enviar</button> -->
-         <!--   <input type="submit" value="Frcadastro.php"> -->
+           <input type="submit" value="Frlistar.php">
            
       </div>
 
     </form>
-    <form action="Frlistar.php" method="post">
-        <input type="submit" value="Frlistar.php">
-    </form>     
-  </div>
+ 
   <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
   
   <form action="login.php" method="post">
