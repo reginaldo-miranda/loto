@@ -13,8 +13,8 @@ if(isset($_POST["concurso"])){
    $nomejogo = $_POST["nomejogo"];    
   
   
-  $d2   = $_POST["d2"];
-  $d1   = $_POST["d1"];
+  $d1   = $_POST["d2"];
+  $d2   = $_POST["d1"];
   $d3   = $_POST["d3"];
   $d4   = $_POST["d4"];
   $d5   = $_POST["d5"];
@@ -96,15 +96,15 @@ if ($concurso <> ''){
           <input type="text"  class="inpute" name="d4"  placeholder="4">
           <input type="text"  class="inpute" name="d5"  placeholder="5">
           <input type="text"  class="inpute" name="d6"  placeholder="6">
-          <input type="text"  class="inpute" name="d7"  placeholder="7">
-          <input type="text"  class="inpute" name="d8"  placeholder="8">
-          <input type="text"  class="inpute" name="d9"  placeholder="9">
-          <input type="text"  class="inpute" name="d10"  placeholder="10">
-          <input type="text"  class="inpute" name="d11"  placeholder="11">
-          <input type="text"  class="inpute" name="d12"  placeholder="12">
-          <input type="text"  class="inpute" name="d13"  placeholder="13">
-          <input type="text"  class="inpute" name="d14"  placeholder="14">
-          <input type="text"  class="inpute" name="d15"  placeholder="15">
+          <input type="text"  class="inpute" name="d7"   placeholder="7">
+          <input type="text"  class="inpute" name="d8"   placeholder="8">
+          <input type="text"  class="inpute" name="d9"   placeholder="9">
+          <input type="text"  class="inpute" name="d10"   placeholder="10">
+          <input type="text"  class="inpute" name="d11"   placeholder="11">
+          <input type="text"  class="inpute" name="d12"   placeholder="12">
+          <input type="text"  class="inpute" name="d13"   placeholder="13">
+          <input type="text"  class="inpute" name="d14"   placeholder="14">
+          <input type="text"  class="inpute" name="d15"   placeholder="15">
         </div><br>
           <!-- <button type="submit">Enviar</button> -->
            <input type="submit" value="Frcadastro.php">

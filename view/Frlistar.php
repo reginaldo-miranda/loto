@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require_once("../php/BEconexao_pdo.php");
 require_once("../php/BEgrud.php");
@@ -5,13 +6,13 @@ require_once("../php/BEgrud.php");
 if(isset($_POST["concurso"])){
    
   
-  echo $concurso = $_POST["concurso"];
+   $concurso = $_POST["concurso"];
      
    $nomejogo = $_POST["nomejogo"];    
   
   
-  $d2   = $_POST["d2"];
   $d1   = $_POST["d1"];
+  $d2   = $_POST["d2"];
   $d3   = $_POST["d3"];
   $d4   = $_POST["d4"];
   $d5   = $_POST["d5"];
@@ -25,46 +26,53 @@ if(isset($_POST["concurso"])){
   $d13  = $_POST["d13"];
   $d14  = $_POST["d14"];
   $d15  = $_POST["d15"];
-}
+
   if ($concurso <> ''){
       $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
       for ($i=0; $i <= 14; $i++) {
-         echo $dezenas[$i];
+         echo ",".$dezenas[$i];
 
        }
      }else{
-        echo "vazia";
+        //echo "vazia";
     }
   
 
- 
-  /*  $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+ /*
+   $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
      for ($i=0; $i <= 14; $i++) {
-       echo $dezenas[$i]."<br>";
+       echo $dezenas[$i]." ";
      } */
 
     
 
-      $dezenasbco = array();
-
+      $dezenasbco = ['0']['0'];
+      $linha = 0;
       $conn = getconexao();
 
-      $sql= "SELECT * FROM lotofacil order by 'concurso'";
+      $sql= "SELECT * FROM lotofacil order by 'dezena'";
 
         $result = $conn->prepare($sql);
         $result->execute();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
-            echo $row['concurso'].'  ';
-            echo $row['dezena']."<br>";
-            array_push($dezenasbco,$row);
+           //  echo $row['concurso'];
+             echo ("  , ").$row['dezena'];
+             array_push($dezenasbco,$row);  
+            echo $dezenasbco[$row];
      
         } 
+              $result_array = array_intersect_assoc($dezenas,$dezenasbco);
+              //var_dump($result_array);
+}
 
 
+
+
+// print_r($result_array);
  //print_r($dezenasbco);
 
-// var_dump($dezenasbco);
+//var_dump($dezenasbco);
 
 
 
@@ -92,7 +100,7 @@ $result_array = array_intersect_assoc($array1, $array2);
 print_r($result_array);*/
 ?>
 
-<!DOCTYPE html>
+
 
 <html lang="pt-br">
 <head>
@@ -113,12 +121,7 @@ print_r($result_array);*/
   </div>
 </header>
 <body>
-    <!--
-  <?php if ($msg == 'enviado') : ?>
-        <h1> cadastrado com sucesso </h1>
-  <?php else : ?>
-        <h1>cadastrar</h1>
-  <?php endif; ?>
+
   <!----------------------------------inicio div conteiner------------------------------>
   <div class="conteiner">
     <form action="Frlistar.php" method="post">
@@ -131,23 +134,23 @@ print_r($result_array);*/
         </div>
         <label>dezenas</label>
         <div>
-          <input type="text"  class="inpute" name="d1"  placeholder="1">
-          <input type="text"  class="inpute" name="d2"  placeholder="2">
-          <input type="text"  class="inpute" name="d3"  placeholder="3">
-          <input type="text"  class="inpute" name="d4"  placeholder="4">
-          <input type="text"  class="inpute" name="d5"  placeholder="5">
-          <input type="text"  class="inpute" name="d6"  placeholder="6">
-          <input type="text"  class="inpute" name="d7"  placeholder="7">
-          <input type="text"  class="inpute" name="d8"  placeholder="8">
-          <input type="text"  class="inpute" name="d9"  placeholder="9">
-          <input type="text"  class="inpute" name="d10"  placeholder="10">
-          <input type="text"  class="inpute" name="d11"  placeholder="11">
-          <input type="text"  class="inpute" name="d12"  placeholder="12">
-          <input type="text"  class="inpute" name="d13"  placeholder="13">
-          <input type="text"  class="inpute" name="d14"  placeholder="14">
-          <input type="text"  class="inpute" name="d15"  placeholder="15">
+          <input type="text"  class="inpute" name="d1"  value="2" placeholder="1">
+          <input type="text"  class="inpute" name="d2"  value="3" placeholder="2">
+          <input type="text"  class="inpute" name="d3"  value="4" placeholder="3">
+          <input type="text"  class="inpute" name="d4"  value="5" placeholder="4">
+          <input type="text"  class="inpute" name="d5"  value="7" placeholder="5">
+          <input type="text"  class="inpute" name="d6"  value="9"  placeholder="6">
+          <input type="text"  class="inpute" name="d7"  value="10" placeholder="7">
+          <input type="text"  class="inpute" name="d8"  value="12" placeholder="8">
+          <input type="text"  class="inpute" name="d9"  value="13" placeholder="9">
+          <input type="text"  class="inpute" name="d10"  value="15" placeholder="10">
+          <input type="text"  class="inpute" name="d11"  value="17" placeholder="11">
+          <input type="text"  class="inpute" name="d12"  value="18" placeholder="12">
+          <input type="text"  class="inpute" name="d13"  value="21" placeholder="13">
+          <input type="text"  class="inpute" name="d14"  value="22" placeholder="14">
+          <input type="text"  class="inpute" name="d15"  value="23" placeholder="15">
         </div><br>
-          <!-- <button type="submit">Enviar</button> -->
+          
            <input type="submit" value="Frlistar.php">
            
       </div>
@@ -156,30 +159,15 @@ print_r($result_array);*/
  
   <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
   
-  <form action="login.php" method="post">
-    <input type="text" name="user">
-    <input type="password" name="password">
-    <input type="submit" value="Login">
-</form>
-
-<br />
-
-<form action="register.php" method="post">
-    <input type="text" name="user">
-    <input type="password" name="password">
-    <input type="submit" value="Register">
-</form>
-
-
-  <!----------------------------------fim rodape------------------------------------------>
+  
   <script>
-    var retornocfop = localStorage.getItem('');
-    /*	document.getElementById('cfopnfe').value=retornocfop; */
-    localStorage.clear();
+    /*var retornocfop = localStorage.getItem('');
+    document.getElementById('cfopnfe').value=retornocfop; 
+    localStorage.clear();*/
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </body>
 </html>
 
