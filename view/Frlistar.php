@@ -46,28 +46,42 @@ if(isset($_POST["concurso"])){
 
     
 
-      $dezenasbco = ['0']['0'];
+      $dezenasbco = [];
       $linha = 0;
       $conn = getconexao();
 
-      $sql= "SELECT * FROM lotofacil order by 'dezena'";
+       $sql= "SELECT * FROM lotofacil order by 'dezena'";
 
         $result = $conn->prepare($sql);
         $result->execute();
-
+/*
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
            //  echo $row['concurso'];
-             echo ("  , ").$row['dezena'];
-             array_push($dezenasbco,$row);  
-            echo $dezenasbco[$row];
+             echo $row['dezena'];
+           // var_dump($row)['dezena'];
+        //     array_push($dezenasbco,$row);  
+        //    echo $dezenasbco['dezena'];
      
-        } 
-              $result_array = array_intersect_assoc($dezenas,$dezenasbco);
+        } */
+              //$result_array = array_intersect_assoc($dezenas,$dezenasbco);
               //var_dump($result_array);
+   foreach ($result as $num){
+        $num['dezena'] . PHP_EOL;
+        $test =  array_push($dezenasbco,$num);
+        echo $test[$i];
+   }
+     for ($i = 0 ; $i < 40; $i++){
+         echo $test[$i];
+     }
 }
 
+//$result_array = array_intersect_assoc($dezenasbco[$num],$dezenas);
+//print_r($result_array);
 
-
+/*
+foreach ($contasCorrentes as $conta) {
+    echo $conta['titular'] . PHP_EOL;
+}
 
 // print_r($result_array);
  //print_r($dezenasbco);
@@ -154,6 +168,7 @@ print_r($result_array);*/
            <input type="submit" value="Frlistar.php">
            
       </div>
+   
 
     </form>
  
