@@ -31,12 +31,12 @@ if(isset($_POST["concurso"])){
       $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
       for ($i=0; $i <= 14; $i++) {
          echo ",".$dezenas[$i];
-
+        
        }
      }else{
         //echo "vazia";
     }
-  
+   var_dump($dezenas);
 
  /*
    $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
@@ -46,7 +46,7 @@ if(isset($_POST["concurso"])){
 
     
 
-      $dezenasbco = [];
+      $dezenasbco[] = '';
       $linha = 0;
       $conn = getconexao();
 
@@ -66,16 +66,23 @@ if(isset($_POST["concurso"])){
               //$result_array = array_intersect_assoc($dezenas,$dezenasbco);
               //var_dump($result_array);
    foreach ($result as $num){
-        $num['dezena'] . PHP_EOL;
-        $test =  array_push($dezenasbco,$num);
-        echo $test[$i];
+     $test = $num['dezena'] . PHP_EOL;
+     array_push($dezenasbco,$test);
+    // echo $test;   
+     var_dump($test);
+     
    }
-     for ($i = 0 ; $i < 40; $i++){
-         echo $test[$i];
-     }
+  
 }
+/*
+$array1 = $test;
+$array2 = $dezenas;
 
-//$result_array = array_intersect_assoc($dezenasbco[$num],$dezenas);
+$result_array = array_intersect_assoc($array1, $array2);
+print_r($result_array);
+
+//$result_array = array_intersect_assoc($test,$dezenas);
+
 //print_r($result_array);
 
 /*
