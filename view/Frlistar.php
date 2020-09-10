@@ -62,25 +62,31 @@ if(isset($_POST["concurso"])){
      while($row = $result->fetch(PDO::FETCH_ASSOC)){
          //   echo $row['concurso'];
            if(is_array($row)){
-             // echo '--' .$row['dezena'];
-              array_push($dezenasbco,$row['dezena']); 
+             echo $row['dezena']."<br>";
+            //  array_push($dezenasbco,$row['dezena']); 
                
            }else{
                echo "nao array";
            }
+         
+       
            /* var_dump($row)['dezena'];
             array_push($dezenasbco,$row);  
           echo $dezenasbco['dezena']; */
      // var_dump($dezenas);
       // var_dump($row['dezena']);
-//       $result_array = array_intersect_assoc($dezenas,$dezenasbco);
-//       print_r($result_array);
-     // echo $result_array;
+    //  $result_array = array_intersect_assoc($dezenas,$dezenasbco);
+         
+       
      //  var_dump($result_array);
        
         }     
    
-   
+  //   $result_array = array_diff($dezenas,$dezenasbco);
+     $result_array = array_intersect($dezenas,$dezenasbco);
+         
+         print_r($result_array);
+       //  echo $result_array;
 }
    /* foreach ($result as $num){
      $test = $num['dezena'] . PHP_EOL;
