@@ -27,22 +27,26 @@ if(isset($_POST["concurso"])){
   $d14  = $_POST["d14"];
   $d15  = $_POST["d15"];
 
-  if ($concurso <> ''){
+  if ($concurso <> ''){    
+      
       $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-      for ($i=0; $i <= 14; $i++) {
-         echo ",".$dezenas[$i];
-        
+      $contagem = count($dezenas)-1;
+      for ($i=0; $i <= $contagem ; $i++) {
+        if(is_array($dezenas)){  
+         // echo ",".$dezenas[$i];
+        }
        }
+      
+      
      }else{
         //echo "vazia";
     }
-   var_dump($dezenas);
 
- /*
-   $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-     for ($i=0; $i <= 14; $i++) {
-       echo $dezenas[$i]." ";
-     } */
+ 
+   //$dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
+    // for ($i=0; $i <= 14; $i++) {
+       //echo $dezenas[$i]." ";
+     //} 
 
     
 
@@ -54,31 +58,47 @@ if(isset($_POST["concurso"])){
 
         $result = $conn->prepare($sql);
         $result->execute();
-/*
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
-           //  echo $row['concurso'];
-             echo $row['dezena'];
-           // var_dump($row)['dezena'];
-        //     array_push($dezenasbco,$row);  
-        //    echo $dezenasbco['dezena'];
-     
-        } */
-              //$result_array = array_intersect_assoc($dezenas,$dezenasbco);
-              //var_dump($result_array);
-   foreach ($result as $num){
-     $test = $num['dezena'] . PHP_EOL;
-     array_push($dezenasbco,$test);
-    // echo $test;   
-     var_dump($test);
-     
-   }
-  
+    
+     while($row = $result->fetch(PDO::FETCH_ASSOC)){
+         //   echo $row['concurso'];
+           if(is_array($row)){
+             // echo '--' .$row['dezena'];
+              array_push($dezenasbco,$row['dezena']); 
+               
+           }else{
+               echo "nao array";
+           }
+           /* var_dump($row)['dezena'];
+            array_push($dezenasbco,$row);  
+          echo $dezenasbco['dezena']; */
+     // var_dump($dezenas);
+      // var_dump($row['dezena']);
+//       $result_array = array_intersect_assoc($dezenas,$dezenasbco);
+//       print_r($result_array);
+     // echo $result_array;
+     //  var_dump($result_array);
+       
+        }     
+   
+   
 }
-/*
-$array1 = $test;
-$array2 = $dezenas;
+   /* foreach ($result as $num){
+     $test = $num['dezena'] . PHP_EOL;
+       if (is_array($test)){
+            echo $test;
+       } */
+    
+   
+        // $result_array = array_intersect($dezenas,$dezenasbco);
+           //   var_dump($result_array);
+  
 
-$result_array = array_intersect_assoc($array1, $array2);
+
+
+/* array1 = $novo;
+//$array2 = $dezenas;
+
+$result_array = array_intersect($array1, $array2);
 print_r($result_array);
 
 //$result_array = array_intersect_assoc($test,$dezenas);
@@ -98,7 +118,7 @@ foreach ($contasCorrentes as $conta) {
 
 
 
-/*
+
 $frutas = array('laranja', 'morango');
 
  array_push($frutas, 'melancia', 'pera');
@@ -109,11 +129,13 @@ $frutas = array('laranja', 'morango');
 //$lotofixa=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,233,24,25];
 
 // compra os dados iguais dos array
-$array1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-$array2 = [1,2,3,4,5,6,7,24,9,10,11,25,24,14,15,16,25,21,22,23];
+*/
+$array1 = [1,2,3,24,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20];
+$array2 = [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,19,20,23,21,22,25];
 
-$result_array = array_intersect_assoc($array1, $array2);
+$result_array = array_intersect($array1, $array2);
 print_r($result_array);
+
 
 /*$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
 $array2 = array("a" => "green", "b" => "yellow", "blue", "red");
@@ -192,13 +214,4 @@ print_r($result_array);*/
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
