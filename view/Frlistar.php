@@ -5,7 +5,7 @@ require_once("../php/BEgrud.php");
 
 if(isset($_POST["concurso"])){
   
-  $concurso = $_POST["concurso"];
+echo  $concurso = $_POST["concurso"];
      
   $nomejogo = $_POST["nomejogo"];    
   
@@ -24,115 +24,100 @@ if(isset($_POST["concurso"])){
   $d13  = $_POST["d13"];
   $d14  = $_POST["d14"];
   $d15  = $_POST["d15"];
-
+      
   if ($concurso <> ''){    
       $dezenas = [$d1,$d2,$d3,$d4,$d5,$d6,$d7,$d8,$d9,$d10,$d11,$d12,$d13,$d14,$d15];
-      $contagem = count($dezenas)-1;
+     /* $contagem = count($dezenas)-1;
       for ($i=0; $i <= $contagem ; $i++) {
          if(is_array($dezenas)){  
             echo ",".$dezenas[$i];
          }
-       }
+       }*/
+      foreach($dezenas as $deze){
+          echo " - ".$deze;
+      }
   }else{
       echo "vazia";
   }
+  echo ' '."<br>" ;   
   $dezenasbco[] = '';
   $linha = 0;
   $conn = getconexao();
-  $sql= "SELECT dezena FROM lotofacil order by 'dezena'";
+  $sql= "SELECT dezena,concurso FROM lotofacil where concurso < '$concurso'";
   $result = $conn->prepare($sql);
   $result->execute();
   while($row = $result->fetch(PDO::FETCH_ASSOC)){
         if(is_array($row)){
-             echo '-'. $row['dezena'];
-             array_push($dezenasbco,$row['dezena']); 
+            echo '  -'. $row['dezena'];
+            array_push($dezenasbco,$row['dezena']); 
+            
            }else{
              echo "nao array";
            }
   }
-      $result_array1 = array_intersect($dezenas,$dezenasbco);
     
-   //   $result_array1 = array_diff($dezenas,$dezenasbco);
-    
-     // var_dump($result_array1);    
-    //  print_r(array_values($result_array1));
-    //$conta = count($result_array1);
-     /* for($i = 0; $i < sizeof($result_array1) ;$i++){
-          if (is_array($result_array1)){
-                echo $result_array1[$i];
-          }else{
-              echo "nao array 2";
-          }
-      }*/
-    foreach($result_array1 as $dez){
-        echo "  numero dif   ". $dez."<br>";
+  $result_repetido = array_intersect($dezenas,$dezenasbco);
+    echo 'repetido';
+    foreach($result_repetido as $rep){
+        ?>
+        <html>  
+           <div>
+            <?php
+               echo "  repetidos   ". $rep; 
+             ?>
+            </div>
+        </html>
+        <?php
     }
-}
-
-     /* var_dump($row)['dezena'];
-        array_push($dezenasbco,$row);  
-        echo $dezenasbco['dezena']; */
-     // var_dump($dezenas);
-     // var_dump($row['dezena']);
-       
-    // $result_array = array_diff($dezenas,$dezenasbco);
-    // $result_array = array_intersect($dezenas,$dezenasbco);
-         
-    // echo '<pre>'; print_r($result_array); echo '<pre>';
-    // print_r($result_array);
-
-   /* foreach ($result as $num){
-     $test = $num['dezena'] . PHP_EOL;
-       if (is_array($test)){
-            echo $test;
-       } */
     
-    // $result_array = array_intersect($dezenas,$dezenasbco);
-    // var_dump($result_array);
-  
-    /* array1 = $novo;
-    //$array2 = $dezenas;
-
-$result_array = array_intersect($array1, $array2);
-print_r($result_array);
-
-//$result_array = array_intersect_assoc($test,$dezenas);
-
-//print_r($result_array);
-
-/*
-foreach ($contasCorrentes as $conta) {
-    echo $conta['titular'] . PHP_EOL;
+    $result_diferente = array_diff($dezenas,$dezenasbco);
+     foreach($result_diferente as $dif){
+        ?>
+        <html>  
+           <div>
+            <?php
+               echo "  dif   ". $dif; 
+             ?>
+            </div>
+        </html>
+        <?php
+    }
+    /*
+    $result_ass = array_intersect_assoc($dezenas,$dezenasbco);
+      foreach($result_ass as $asso){
+        ?>
+        <html>  
+           <div>
+            <?php
+               echo "  asssoc ". $asso; 
+             ?>
+            </div>
+        </html>
+        <?php
+    }*/
 }
 
-// print_r($result_array);
- //print_r($dezenasbco);
 
-//var_dump($dezenasbco);
+$array = $dezenasbco ;//array(1, "ola", 1, "mundo", "ola");
+$varias = array_count_values($array);
 
-$frutas = array('laranja', 'morango');
-
-array_push($frutas, 'melancia', 'pera');
-
-print_r($frutas); 
-
-//$lotofixa=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,233,24,25];
-
-// compra os dados iguais dos array
-
-$array1 = [1,2,3,24,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20];
-$array2 = [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,19,20,23,21,22,25];
-
-$result_array = array_intersect($array1, $array2);
-print_r($result_array);
-
-/*$array1 = array("a" => "green", "b" => "brown", "c" => "blue", "red");
-$array2 = array("a" => "green", "b" => "yellow", "blue", "red");
-$result_array = array_intersect_assoc($array1, $array2);
-print_r($result_array);*/
+    ?>
+    <html>
+      <pre>
+          <?php
+            print_r($varias) ;
+           ?>
+      </pre>
+       
+</html>
+    <?php
+// var_dump($varias);
+/* foreach($varias as $dupl){
+    echo ' . '.$dupl;
+}*/
 ?>
 
-<html lang="pt-br">
+<html lang="pt-br"> 
 <head>
 
   <title>Loto facil</title>
@@ -143,13 +128,14 @@ print_r($result_array);*/
   <script src="../static/js/forminput.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/f48343b6a3.js" crossorigin="anonymous"></script>
-</head>
+</head> <!--
 <header>
+ 
   <div id="TEXTO">Jogo da Loto Facil</div>
   <div id="saida">
     <button id="btn-fecharSistema" type="button" onClick="fechar()">Sair <i class="fas fa-times"></i></button>
-  </div>
-</header>
+  </div> 
+</header> -->
 <body>
 
   <!----------------------------------inicio div conteiner------------------------------>
@@ -184,10 +170,10 @@ print_r($result_array);*/
            <input type="submit" value="Frlistar.php">
            
       </div>
-   
-
+       
+        
     </form>
- 
+    </div>
   <!-----------udemy sessao 97 433 -----------------------fim da div conteiner------------------------------
   
   
