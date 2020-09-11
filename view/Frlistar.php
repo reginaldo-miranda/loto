@@ -5,7 +5,7 @@ require_once("../php/BEgrud.php");
 
 if(isset($_POST["concurso"])){
   
-echo  $concurso = $_POST["concurso"];
+echo  $concurso = $_POST["concurso"]."<br>";
      
   $nomejogo = $_POST["nomejogo"];    
   
@@ -43,10 +43,14 @@ echo  $concurso = $_POST["concurso"];
   $dezenasbco[] = '';
   $linha = 0;
   $conn = getconexao();
-  $sql= "SELECT dezena,concurso FROM lotofacil where concurso < '$concurso'";
+  $sql= "SELECT dezena,concurso FROM lotofacil order by concurso ";
   $result = $conn->prepare($sql);
   $result->execute();
+// enquanto for o mesmo codigo faca  
+
+   
   while($row = $result->fetch(PDO::FETCH_ASSOC)){
+     //  while($concurso == 'concurso'){ 
         if(is_array($row)){
             echo '  -'. $row['dezena'];
             array_push($dezenasbco,$row['dezena']); 
@@ -54,7 +58,8 @@ echo  $concurso = $_POST["concurso"];
            }else{
              echo "nao array";
            }
-  }
+ // }
+ }     // fim do faca
     
   $result_repetido = array_intersect($dezenas,$dezenasbco);
     echo 'repetido';
@@ -115,6 +120,30 @@ $varias = array_count_values($array);
 /* foreach($varias as $dupl){
     echo ' . '.$dupl;
 }*/
+/*
+Crie uma variável para armazenar o identificador da linha anterior.
+
+$id = -1; // Um valor que nunca vai existir no banco 
+while($row = mysql_fetch_array($result)) { 
+ $currentId = $row["id"];
+ if($id == -1) { 
+    // Primeiro registro lido
+ } else {
+   if($id != $currentId) { 
+        // ID diferente, adicione a quebra 
+ } else { 
+   // Mesmo ID, liste os dados 
+ }
+ }
+   $id = $currentId; 
+ }
+
+Dependendo do caso vc pode armazenar toda a linha anterior numa variável.
+
+$oldRow = null; while($row = mysql_fetch_array($result)) { if($oldRow == null) { // Primeiro registro lido } else { if($oldRow["id"] != $row["id"]) { // ID diferente, adicione a quebra } else { // Mesmo ID, liste os dados } } $oldRow = $row; }
+*/
+
+// https://www.guj.com.br/t/ler-o-proximo-registro-em-uma-query-mysql-no-php/19946/2
 ?>
 
 <html lang="pt-br"> 
