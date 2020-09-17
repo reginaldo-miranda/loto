@@ -33,3 +33,5 @@ function feedforward(inputs=[], target=0, epochs=1,){
     }
     
 }
+
+feedforward([0], 0.1, 10);
